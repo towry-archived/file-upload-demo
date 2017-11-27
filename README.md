@@ -1,6 +1,9 @@
 # File upload demo with plupload
 
-```bash
+## Install & run
+
+```plain
 cd static && npm install
+pip install -r requirements.txt
 make
 ```
