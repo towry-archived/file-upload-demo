@@ -46,6 +46,9 @@ def post_upload():
     _file = request.files['file']
     if _file.filename == '':
         return json_error(status=1, message="no selected file")
+
+    print("got one file: {}".format(_file.filename))
+
     if _file and allowed_file(_file.filename):
         filename = secure_filename(_file.filename)
         _file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))

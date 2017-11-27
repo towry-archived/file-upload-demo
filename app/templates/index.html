@@ -8,8 +8,9 @@
   </head>
 
   <body>
-      <ul id="filelist"></ul>
-      <br />
+      <ul id="filelist" style="color: green;">
+        <li>Your browser doesn't have Flash, Silverlight or HTML5 support.</li>
+      </ul>
 
       <div id="container">
           <a id="browse" href="javascript:;">[Browse...]</a>
@@ -18,6 +19,13 @@
           <pre id="console"></pre>
       </div>
 
-      <script src="/static/js/app.js"></script>
+      <script>
+        (function () {
+          var u = '/static/js/app.js?_t=' + (new Date()).getTime();
+          var s = document.createElement('script');
+          s.src = u;
+          document.body.appendChild(s);
+        }).call(this);
+      </script>
   </body>
 </html>
